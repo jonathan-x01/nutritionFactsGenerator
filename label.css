@@ -1,22 +1,3 @@
-@font-face {
-  font-family: Helvetica;
-  src: url("Helvetica.ttf");
-}
-
-@font-face {
-  font-family: HelveticaBlack;
-  font-style: normal;
-  font-weight: normal;
-  src: url("HelveticaBlack.ttf");
-}
-
-@font-face {
-  font-family: Helvetica;
-  font-style: normal;
-  font-weight: bold;
-  src: url("Helvetica-Bold-Font.ttf");
-}
-
 * {
   font-family: sans-serif;
 }
