@@ -1,0 +1,215 @@
+@font-face {
+  font-family: Helvetica;
+  src: url("Helvetica.ttf");
+}
+
+@font-face {
+  font-family: HelveticaBlack;
+  font-style: normal;
+  font-weight: normal;
+  src: url("HelveticaBlack.ttf");
+}
+
+@font-face {
+  font-family: Helvetica;
+  font-style: normal;
+  font-weight: bold;
+  src: url("Helvetica-Bold-Font.ttf");
+}
+
+* {
+  font-family: sans-serif;
+}
+
+body, html {
+  margin: 0;
+  overflow: hidden;
+}
+
+.outer-frame {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.inner-frame {
+  display: flex;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.nutritional-facts {
+  display: inline-block;
+  padding: 2pt;
+  user-select: none;
+}
+
+table {
+  border-collapse: collapse;
+  border: 1.5pt solid black;
+  font-family: Helvetica !important;
+}
+
+table td:last-child {
+  text-align: right;
+}
+
+table td:only-child {
+  text-align: left;
+}
+
+table .basic-border-bottom > td {
+  border-bottom: 0.5pt solid black;
+}
+
+table td.basic-border-bottom {
+  border-bottom: 0.5pt solid black;
+}
+
+table td.basic-border-top {
+  border-top: 0.5pt solid black;
+}
+
+table td.medium-border-bottom {
+  border-bottom: 3pt solid black;
+}
+
+table td.medium-border-top {
+  border-top: 3pt solid black;
+}
+
+table .medium-border-bottom > td {
+  border-bottom: 3pt solid black;
+}
+
+table .large-border-bottom > td {
+  border-bottom: 7pt solid black;
+}
+
+table #TITLE {
+  font-family: HelveticaBlack !important;
+  font-size: 16pt;
+}
+
+/** Servings **/
+table .serving-size {
+  font-weight: bold;
+}
+
+table .serving-size p, table .servings p {
+  display: inline-block;
+  margin: 0;
+}
+
+table .serving-font-size {
+  font-size: 10pt;
+}
+
+table #AMOUNT_SERVING {
+  font-size: 6pt;
+  font-weight: bold;
+}
+
+/** Calories **/
+table #NUM_CALORIES {
+  font-weight: bold;
+  font-size: 22pt;
+}
+
+table #CALORIES {
+  font-weight: bold;
+  font-size: 16pt;
+}
+
+/** Vitamins and Minerals **/
+table #PER_DAILY_VALUE {
+  font-weight: bold;
+  font-size: 6pt;
+}
+
+table .percentage {
+  font-size: 8pt;
+  font-weight: bold;
+}
+
+table .vitamin-value {
+  font-size: 8pt;
+  font-weight: normal;
+}
+
+table .vitamin-top-label {
+  font-size: 8pt;
+  font-weight: bold;
+}
+
+table .vitamin-bottom-label {
+  font-size: 8pt;
+}
+
+table .sub-1 {
+  text-indent: 6pt;
+}
+
+table .sub-2 {
+  border-top: 1px solid black;
+  margin-left: 12pt;
+}
+
+/** footnote **/
+.footnote {
+  font-size: 6pt;
+  line-height: 7pt;
+  padding-top: 4pt;
+}
+
+/** Inputs **/
+input[type=text], input[type=number]{
+  padding: 5px;
+  border: none;
+}
+
+input[type=number] {
+  width: 50px;
+}
+
+/** Side Bar **/
+#SIDE_BAR {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  position: absolute;
+  background-color: #949494;
+  height: 100%;
+  width: 20%;
+  margin-left: 80%;
+  z-index: 1;
+}
+
+#SIDE_BAR p {
+  display: inline-block;
+}
+
+#SIDE_BAR .container {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px;
+  margin-right: 25px;
+}
+
+#SIDE_BAR h1, h2, h3, h4 {
+  text-align: center;
+}
+
+#SIDE_BAR h3, #SIDE_BAR h4 {
+  border-bottom: 1px solid black;
+}
+
+#SIDE_BAR h3 {
+  margin: 5px 5px;
+}
+
+#SIDE_BAR h4 {
+  margin: 7px 7px;
+  font-weight: normal;
+}
