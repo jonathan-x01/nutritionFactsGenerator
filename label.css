@@ -1,3 +1,15 @@
+@media print {
+  #SIDE_BAR {
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width: 513px) {
+  #SIDE_BAR {
+    left: 0;
+  }
+}
+
 * {
   font-family: sans-serif;
 }
@@ -13,13 +25,6 @@ body, html {
   width: 100%;
 }
 
-.inner-frame {
-  display: flex;
-  position: relative;
-  height: 100%;
-  width: 100%;
-}
-
 .nutritional-facts {
   display: inline-block;
   padding: 2pt;
@@ -30,6 +35,11 @@ table {
   border-collapse: collapse;
   border: 1.5pt solid black;
   font-family: Helvetica !important;
+  position: relative;
+}
+
+table td:hover {
+  cursor: default;
 }
 
 table td:last-child {
@@ -152,6 +162,11 @@ input[type=text], input[type=number]{
 
 input[type=number] {
   width: 50px;
+  user-select: none;
+}
+
+input:hover {
+  cursor: e-resize;
 }
 
 /** Side Bar **/
@@ -162,8 +177,8 @@ input[type=number] {
   position: absolute;
   background-color: #949494;
   height: 100%;
-  width: 20%;
-  margin-left: 80%;
+  right: 0;
+  overflow-x: auto;
   z-index: 1;
 }
 
