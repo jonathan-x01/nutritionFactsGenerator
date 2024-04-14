@@ -8,174 +8,170 @@
     <link rel="stylesheet" href="label.css">
   </head>
   <body>
-    <div class="outer-frame">
-      <div class="inner-frame">
-        <div class="nutritional-facts">
-          <table id="nutritional_facts">
-            <tr class="basic-border-bottom">
-              <td colspan="2" id="TITLE">Nutrition Facts</td>
-            </tr>
-            <!-- Serving size -->
-            <tr>
-              <td colspan="2" class="serving-font servings" id="SERVING_PER"><p id="SERVINGS">0</p> servings per container</td>
-            </tr>
-            <tr class="large-border-bottom">
-              <td class="serving-size serving-font-size" id="SERVING_SIZE">Serving size</td>
-              <td class="serving-size serving-font-size" id="NUM_SERVING_SIZE"><p id="SERVING-SIZE-CUP">0</p> cup (<p id="SERVING-SIZE-GRAMS">0</p>g)</td>
-            </tr>
-            <!-- Calories -->
-            <tr>
-              <td colspan="1" id="AMOUNT_SERVING">Amount per serving</td>
-              <td rowspan="2" class="medium-border-bottom" id="NUM_CALORIES">0</td>
-            </tr>
-            <tr class="medium-border-bottom">
-              <td id="CALORIES">Calories</td>
-            </tr>
-            <!-- Vitamins -->
-            <tr class="basic-border-bottom">
-              <td></td>
-              <td id="PER_DAILY_VALUE">% Daily Value*</td>
-            </tr>
-            <tr id="TOTAL_FAT" class="fat-parent basic-border-bottom">
-              <td class="vitamin-top-label"><span class="vitamin-top-label">Total Fat</span> <span class="vitamin-value">0g</span></td>
-              <td class="percentage">0%</td>
-            </tr>
-            <tr id="SATURATED_FAT" class="basic-border-bottom">
-              <td class="sub-1 vitamin-bottom-label"><span class="vitamin-top-level">Saturated Fat</span> <span class="vitamin-value">0g</span></td>
-              <td class="percentage">0%</td>
-            </tr>
-            <tr id="TRANS_FAT" class="basic-border-bottom">
-              <td colspan="2" class="sub-1 vitamin-bottom-label"><span class="vitamin-bottom-label">Trans Fat</span> <span class="vitamin-value">0g</span></td>
-            </tr>
-            <tr id="CHOLESTEROL" class="basic-border-bottom">
-              <td class="vitamin-top-label"><span class="vitamin-top-label">Cholesterol</span> <span class="vitamin-value">0mg</span></td>
-              <td class="percentage">0%</td>
-            </tr>
-            <tr id="SODIUM" class="basic-border-bottom">
-              <td class="vitamin-top-label"><span class="vitamin-top-label">Sodium</span> <span class="vitamin-value">0mg</span></td>
-              <td class="percentage">0%</td>
-            </tr>
-            <tr id="TOTAL_CARBS" class="total_carbohydrate-parent basic-border-bottom">
-              <td class="vitamin-top-label"><span class="vitamin-top-label">Total carbohydrate</span> <span class="vitamin-value">0g</span></td>
-              <td class="percentage">0%</td>
-            </tr>
-            <tr id="DIETARY_FIBER" class="basic-border-bottom">
-              <td class="sub-1 vitamin-bottom-label"><span class="vitamin-bottom-label">Dietary Fiber</span> <span class="vitamin-value">0g</span></td>
-              <td class="percentage">0%</td>
-            </tr>
-            <tr id="TOTAL_SUGARS" class="TOTAL_SUGARS-parent">
-              <td colspan="2" class="sub-1 vitamin-bottom-label"><span>Total Sugars</span> <span class="vitamin-value">0g</span></td>
-            </tr>
-            <tr id="ADDED_SUGARS" class="basic-border-bottom">
-              <td class="vitamin-bottom-label" style="padding-right:0;margin-top:0.25pt"><span class="sub-2">Includes <span class="vitamin-value">0g</span> Added Sugars</span></td>
-              <td class="percentage basic-border-top">0%</td>
-            </tr>
-            <tr id="PROTEIN" class="large-border-bottom" id="BEFORE_CUSTOM_VITAMINS">
-              <td colspan="2" class="vitamin-bottom-label"><span style="font-weight:bold">Protein</span> <span class="vitamin-value">0g</span></td>
-            </tr>
-            <tr id="VITAMIN_D" class="basic-border-bottom">
-              <td class="vitamin-bottom-label">Vitamin D <span class="vitamin-value">0mcg</span></td>
-              <td class="percentage">0%</td>
-            </tr>
-            <tr id="CALCIUM" class="basic-border-bottom">
-              <td class="vitamin-bottom-label">Calcium <span class="vitamin-value">0mg</span></td>
-              <td class="percentage">0%</td>
-            </tr>
-            <tr id="IRON" class="basic-border-bottom">
-              <td class="vitamin-bottom-label">Iron <span class="vitamin-value">0mg</span></td>
-              <td class="percentage">0%</td>
-            </tr>
-            <tr id="POTASSIUM" class="basic-border-bottom">
-              <td class="vitamin-bottom-label">Potassium <span class="vitamin-value">0mg</span></td>
-              <td class="percentage">0%</td>
-            </tr>
-            <tr id="AFTER_CUSTOM_VITAMINS">
-              <td colspan="2" class="medium-border-top footnote">*The % Daily Value tells you how much a nutrient in a<br> serving of food contributes to a daily diet. 2000 calories<br> a day is used for general nutrition advice.</td>
-            </tr>
-          </table>
+    <div id="SIDE_BAR">
+        <h2>CONFIG</h2>
+        <h3>Servings/Calories</h3>
+        <div class="container">
+          <label for="servings">SERVINGS: </label>
+          <input type="number" name="servings" value="0" oninput="changeValue(this,'SERVINGS')">
         </div>
-        <div id="SIDE_BAR">
-          <h2>CONFIG</h2>
-          <h3>Servings/Calories</h3>
-          <div class="container">
-            <label for="servings">SERVINGS: </label>
-            <input type="number" name="servings" value="0" oninput="changeValue(this,'SERVINGS')">
-          </div>
-          <div class="container">
-            <label for="serving-size">SERVING SIZE: </label>
-            <input type="number" name="serving-size" value="0" oninput="changeValue(this,'SERVING-SIZE-CUP')">
-            <input type="number" name="serving-size" value="0" oninput="changeValue(this,'SERVING-SIZE-GRAMS')">
-          </div>
-          <div class="container">
-            <label for="added-calories">CALORIES: </label>
-            <input type="number" name="added-calories" value="0" oninput="calculateCalories()">
-          </div>
-          <h3>Energy</h3>
-          <div class="container">
-            <label for="fat">FAT: </label>
-            <input class="fat-calc" type="number" name="fat" value="0" oninput="calculateCalories();calculateParentVitamin('fat')">
-          </div>
-          <div class="container">
-            <label for="sat-fat">SATURATED FAT: </label>
-            <input class="fat-calc" type="number" name="sat-fat" value="0" oninput="calculateCalories();calculateParentVitamin('fat');changeNutritionValue(this,'saturated_fat')">
-          </div>
-          <div class="container">
-            <label for="trans-fat">TRANS FAT: </label>
-            <input class="fat-calc" type="number" name="trans-fat" value="0" oninput="calculateCalories();calculateParentVitamin('fat');changeNutritionValue(this,null,'TRANS_FAT')">
-          </div>
-          <div class="container">
-            <label for="cholesterol">CHOLESTEROL: </label>
-            <input type="number" name="cholesterol" value="0" oninput="changeNutritionValue(this,'cholesterol')">
-          </div>
-          <div class="container">
-            <label for="sodium">SODIUM: </label>
-            <input type="number" name="sodium" value="0" oninput="changeNutritionValue(this,'sodium')">
-          </div>
-          <div class="container">
-            <label for="carbs">CARBOHYDRATE: </label>
-            <input class="total_carbohydrate-calc" type="number" name="carbs" value="0" oninput="calculateCalories();calculateParentVitamin('total_carbohydrate')">
-          </div>
-          <div class="container">
-            <label for="dietary-fibers">DIETARY FIBERS: </label>
-            <input class="total_carbohydrate-calc" type="number" name="dietary-fibers" value="0" oninput="calculateParentVitamin('total_carbohydrate');changeNutritionValue(this,'dietary_fiber')">
-          </div>
-          <div class="container">
-            <label for="sugars">SUGARS: </label>
-            <input class="total_carbohydrate-calc TOTAL_SUGARS-calc" type="number" name="sugars" value="0" oninput="calculateParentVitamin('TOTAL_SUGARS');calculateParentVitamin('total_carbohydrate')">
-          </div>
-          <div class="container">
-            <label for="added-sugars">ADDED SUGARS: </label>
-            <input class="total_carbohydrate-calc TOTAL_SUGARS-calc" type="number" name="added-sugars" value="0" oninput="calculateParentVitamin('TOTAL_SUGARS');calculateParentVitamin('total_carbohydrate');changeNutritionValue(this,'added_sugars')">
-          </div>
-          <div class="container">
-            <label for="protein">PROTEIN: </label>
-            <input type="number" name="protein" value="0" oninput="calculateCalories();changeNutritionValue(this,'protein')">
-          </div>
-          <h3>Vitamins</h3>
-          <div class="container">
-            <label for="vitamin-d">VITAMIN D: </label>
-            <input type="number" name="vitamin-d" value="0" oninput="changeNutritionValue(this,'vitamin_d')">
-          </div>
-          <div class="container">
-            <label for="calcium">CALCIUM: </label>
-            <input type="number" name="calcium" value="0" oninput="changeNutritionValue(this,'calcium')">
-          </div>
-          <div class="container">
-            <label for="iron">IRON: </label>
-            <input type="number" name="iron" value="0" oninput="changeNutritionValue(this,'iron')">
-          </div>
-          <div class="container">
-            <label for="potassium">POTASSIUM: </label>
-            <input type="number" name="potassium" value="0" oninput="changeNutritionValue(this,'potassium')">
-          </div>
+        <div class="container">
+          <label for="serving-size">SERVING SIZE: </label>
+          <input type="number" name="serving-size" value="0" oninput="changeValue(this,'SERVING-SIZE-CUP')">
+          <input type="number" name="serving-size" value="0" oninput="changeValue(this,'SERVING-SIZE-GRAMS')">
+        </div>
+        <div class="container">
+          <label for="added-calories">CALORIES: </label>
+          <input type="number" name="added-calories" value="0" oninput="calculateCalories()">
+        </div>
+        <h3>Energy</h3>
+        <div class="container">
+          <label for="fat">FAT: </label>
+          <input class="fat-calc" type="number" name="fat" value="0" oninput="calculateCalories();calculateParentVitamin('fat')">
+        </div>
+        <div class="container">
+          <label for="sat-fat">SATURATED FAT: </label>
+          <input class="fat-calc" type="number" name="sat-fat" value="0" oninput="calculateCalories();calculateParentVitamin('fat');changeNutritionValue(this,'saturated_fat')">
+        </div>
+        <div class="container">
+          <label for="trans-fat">TRANS FAT: </label>
+          <input class="fat-calc" type="number" name="trans-fat" value="0" oninput="calculateCalories();calculateParentVitamin('fat');changeNutritionValue(this,null,'TRANS_FAT')">
+        </div>
+        <div class="container">
+          <label for="cholesterol">CHOLESTEROL: </label>
+          <input type="number" name="cholesterol" value="0" oninput="changeNutritionValue(this,'cholesterol')">
+        </div>
+        <div class="container">
+          <label for="sodium">SODIUM: </label>
+          <input type="number" name="sodium" value="0" oninput="changeNutritionValue(this,'sodium')">
+        </div>
+        <div class="container">
+          <label for="carbs">CARBOHYDRATE: </label>
+          <input class="total_carbohydrate-calc" type="number" name="carbs" value="0" oninput="calculateCalories();calculateParentVitamin('total_carbohydrate')">
+        </div>
+        <div class="container">
+          <label for="dietary-fibers">DIETARY FIBERS: </label>
+          <input class="total_carbohydrate-calc" type="number" name="dietary-fibers" value="0" oninput="calculateParentVitamin('total_carbohydrate');changeNutritionValue(this,'dietary_fiber')">
+        </div>
+        <div class="container">
+          <label for="sugars">SUGARS: </label>
+          <input class="total_carbohydrate-calc TOTAL_SUGARS-calc" type="number" name="sugars" value="0" oninput="calculateParentVitamin('TOTAL_SUGARS');calculateParentVitamin('total_carbohydrate')">
+        </div>
+        <div class="container">
+          <label for="added-sugars">ADDED SUGARS: </label>
+          <input class="total_carbohydrate-calc TOTAL_SUGARS-calc" type="number" name="added-sugars" value="0" oninput="calculateParentVitamin('TOTAL_SUGARS');calculateParentVitamin('total_carbohydrate');changeNutritionValue(this,'added_sugars')">
+        </div>
+        <div class="container">
+          <label for="protein">PROTEIN: </label>
+          <input type="number" name="protein" value="0" oninput="calculateCalories();changeNutritionValue(this,'protein')">
+        </div>
+        <h3>Vitamins</h3>
+        <div class="container">
+          <label for="vitamin-d">VITAMIN D: </label>
+          <input type="number" name="vitamin-d" value="0" oninput="changeNutritionValue(this,'vitamin_d')">
+        </div>
+        <div class="container">
+          <label for="calcium">CALCIUM: </label>
+          <input type="number" name="calcium" value="0" oninput="changeNutritionValue(this,'calcium')">
+        </div>
+        <div class="container">
+          <label for="iron">IRON: </label>
+          <input type="number" name="iron" value="0" oninput="changeNutritionValue(this,'iron')">
+        </div>
+        <div class="container">
+          <label for="potassium">POTASSIUM: </label>
+          <input type="number" name="potassium" value="0" oninput="changeNutritionValue(this,'potassium')">
         </div>
       </div>
+    <div class="outer-frame">
+      <table id="nutritional_facts">
+          <tr class="basic-border-bottom">
+            <td colspan="2" id="TITLE">Nutrition Facts</td>
+          </tr>
+          <!-- Serving size -->
+          <tr>
+            <td colspan="2" class="serving-font servings" id="SERVING_PER"><p id="SERVINGS">0</p> servings per container</td>
+          </tr>
+          <tr class="large-border-bottom">
+            <td class="serving-size serving-font-size" id="SERVING_SIZE">Serving size</td>
+            <td class="serving-size serving-font-size" id="NUM_SERVING_SIZE"><p id="SERVING-SIZE-CUP">0</p> cup (<p id="SERVING-SIZE-GRAMS">0</p>g)</td>
+          </tr>
+          <!-- Calories -->
+          <tr>
+            <td colspan="1" id="AMOUNT_SERVING">Amount per serving</td>
+            <td rowspan="2" class="medium-border-bottom" id="NUM_CALORIES">0</td>
+          </tr>
+          <tr class="medium-border-bottom">
+            <td id="CALORIES">Calories</td>
+          </tr>
+          <!-- Vitamins -->
+          <tr class="basic-border-bottom">
+            <td></td>
+            <td id="PER_DAILY_VALUE">% Daily Value*</td>
+          </tr>
+          <tr id="TOTAL_FAT" class="fat-parent basic-border-bottom">
+            <td class="vitamin-top-label"><span class="vitamin-top-label">Total Fat</span> <span class="vitamin-value">0g</span></td>
+            <td class="percentage">0%</td>
+          </tr>
+          <tr id="SATURATED_FAT" class="basic-border-bottom">
+            <td class="sub-1 vitamin-bottom-label"><span class="vitamin-top-level">Saturated Fat</span> <span class="vitamin-value">0g</span></td>
+            <td class="percentage">0%</td>
+          </tr>
+          <tr id="TRANS_FAT" class="basic-border-bottom">
+            <td colspan="2" class="sub-1 vitamin-bottom-label"><span class="vitamin-bottom-label">Trans Fat</span> <span class="vitamin-value">0g</span></td>
+          </tr>
+          <tr id="CHOLESTEROL" class="basic-border-bottom">
+            <td class="vitamin-top-label"><span class="vitamin-top-label">Cholesterol</span> <span class="vitamin-value">0mg</span></td>
+            <td class="percentage">0%</td>
+          </tr>
+          <tr id="SODIUM" class="basic-border-bottom">
+            <td class="vitamin-top-label"><span class="vitamin-top-label">Sodium</span> <span class="vitamin-value">0mg</span></td>
+            <td class="percentage">0%</td>
+          </tr>
+          <tr id="TOTAL_CARBS" class="total_carbohydrate-parent basic-border-bottom">
+            <td class="vitamin-top-label"><span class="vitamin-top-label">Total carbohydrate</span> <span class="vitamin-value">0g</span></td>
+            <td class="percentage">0%</td>
+          </tr>
+          <tr id="DIETARY_FIBER" class="basic-border-bottom">
+            <td class="sub-1 vitamin-bottom-label"><span class="vitamin-bottom-label">Dietary Fiber</span> <span class="vitamin-value">0g</span></td>
+            <td class="percentage">0%</td>
+          </tr>
+          <tr id="TOTAL_SUGARS" class="TOTAL_SUGARS-parent">
+            <td colspan="2" class="sub-1 vitamin-bottom-label"><span>Total Sugars</span> <span class="vitamin-value">0g</span></td>
+          </tr>
+          <tr id="ADDED_SUGARS" class="basic-border-bottom">
+            <td class="vitamin-bottom-label" style="padding-right:0;margin-top:0.25pt"><div class="sub-2">Includes <span class="vitamin-value">0g</span> Added Sugars</div></td>
+            <td style="padding-left:0;padding-right:0;border-top: none" class="basic-border-top"><div style="width:100%;margin:0" class="percentage sub-2">0%</div></td>
+          </tr>
+          <tr id="PROTEIN" class="large-border-bottom" id="BEFORE_CUSTOM_VITAMINS">
+            <td colspan="2" class="vitamin-bottom-label"><span style="font-weight:bold">Protein</span> <span class="vitamin-value">0g</span></td>
+          </tr>
+          <tr id="VITAMIN_D" class="basic-border-bottom">
+            <td class="vitamin-bottom-label">Vitamin D <span class="vitamin-value">0mcg</span></td>
+            <td class="percentage">0%</td>
+          </tr>
+          <tr id="CALCIUM" class="basic-border-bottom">
+            <td class="vitamin-bottom-label">Calcium <span class="vitamin-value">0mg</span></td>
+            <td class="percentage">0%</td>
+          </tr>
+          <tr id="IRON" class="basic-border-bottom">
+            <td class="vitamin-bottom-label">Iron <span class="vitamin-value">0mg</span></td>
+            <td class="percentage">0%</td>
+          </tr>
+          <tr id="POTASSIUM" class="basic-border-bottom">
+            <td class="vitamin-bottom-label">Potassium <span class="vitamin-value">0mg</span></td>
+            <td class="percentage">0%</td>
+          </tr>
+          <tr id="AFTER_CUSTOM_VITAMINS">
+            <td colspan="2" class="medium-border-top footnote">*The % Daily Value tells you how much a nutrient in a<br> serving of food contributes to a daily diet. 2000 calories<br> a day is used for general nutrition advice.</td>
+          </tr>
+        </table>
     </div>
   </body>
   <script src='https://unpkg.com/panzoom@9.4.0/dist/panzoom.min.js'></script>
   <script type="text/javascript">
-    //panzoom(document.getElementsByClassName("nutritional-facts")[0]);
-    panzoom(document.getElementById("nutritional_facts"));
+    var table = document.getElementById("nutritional_facts");
+    var panZoomInstance = panzoom(table);
   </script>
   <script type="text/javascript" src="main.js"></script>
 </html>

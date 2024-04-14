@@ -267,3 +267,85 @@ function changeNutritionValue(element, nutrient, id){
 function changeValue(element, id){
   document.getElementById(id).innerHTML = Number.parseInt(element.value);
 }
+
+var inputs = document.getElementsByTagName("input");
+
+let shiftKey = false;
+let ctrlKey = false;
+
+function setKeys(e){
+  shiftKey = e.shiftKey;
+  ctrlKey = e.ctrlKey;
+}
+
+// Checks to see if the shift key or ctrl key was pressed down
+window.addEventListener("keydown",(e) => {
+  setKeys(e);
+})
+
+window.addEventListener("keyup",(e) => {
+  setKeys(e);
+})
+
+// Draggable Number Changer
+// Loops through all the input fields
+for (let i = 0; i < inputs.length; i++){
+  // Converts
+  let input = inputs[i];
+  // Is the input currently selected.
+  let inputSelected = false;
+  // The position of the cursor X when first dragged.
+  let cursorStart;
+  let cursorCurrent;
+  let cursorPrevious;
+
+  // Checks to see if the user clicks their mouse on an input.
+  input.addEventListener("mousedown",(e) => {
+    // Changes body style of cursor to the resize.
+    document.body.style.cursor = "e-resize";
+    // Sets the cursor start.
+    cursorStart = e.clientX;
+    // Sets the input selected to true.
+    inputSelected = true;
+  });
+
+  // Checks to see if the user starts moving the mouse.
+  document.body.addEventListener("mousemove",(e) => {
+    // Checks to see if the user has the input selected.
+    if (inputSelected){
+      // Sets the current cursor.
+      cursorCurrent = e.clientX;
+
+      // Current < previous = Cursor going left.
+      // Current >= previous = Cursor going right.
+      let distance;
+      let distanceStart = 1;
+      if (ctrlKey){
+        distanceStart *= 4;
+      }
+
+      if (cursorCurrent >= cursorPrevious){
+        distance = Math.round(distanceStart);
+      } else {
+        distance = Math.round(-distanceStart);
+      }
+      input.value = Number.parseInt(input.value) + distance;
+      eval(input.getAttribute("oninput").replaceAll(/this/g,`document.getElementsByTagName('input')[${i}]`));
+      cursorPrevious = e.clientX;
+    }
+  });
+
+  document.body.addEventListener("mouseup",(e) => {
+    if (inputSelected){
+      document.body.style.cursor = "";
+      inputSelected = false;
+    }
+  });
+}
+
+// Still in a work of progress
+/*panZoomInstance.on('transform',() => {
+  localStorage.setItem("table-transform",table.getAttribute("style"));
+})
+
+table.setAttribute("style",localStorage.getItem("table-transform"));*/
