@@ -160,7 +160,7 @@ input[type=text], input[type=number]{
   border: none;
 }
 
-input[type=number] {
+input[type=text],input[type=number] {
   width: 50px;
   user-select: none;
 }
