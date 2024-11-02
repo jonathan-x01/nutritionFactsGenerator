@@ -268,6 +268,20 @@ function changeValue(element, id){
   document.getElementById(id).innerHTML = Number.parseInt(element.value);
 }
 
+function calculateByFormula(txt){
+  function replaceToJSOperator(o){
+    if (o.includes("^")){
+      return o.replace(/\^/g, "**");
+    }
+    return o;
+  }
+
+  let operators = /^[\d\s\+\-\*\/\^\(\)]+$/;
+  if (operators.test(txt)){
+    return eval(replaceToJSOperator(txt));
+  }
+}
+
 var inputs = document.getElementsByTagName("input");
 
 let shiftKey = false;
@@ -298,6 +312,17 @@ for (let i = 0; i < inputs.length; i++){
   let cursorStart;
   let cursorCurrent;
   let cursorPrevious;
+
+  // Checks to see when the input field has been focused out.
+  input.addEventListener("focusout",(e) => {
+    let tar = e.target;
+    if (tar.value == ""){
+      tar.value = "0";
+    } else {
+      tar.value = calculateByFormula(tar.value);
+    }
+
+  });
 
   // Checks to see if the user clicks their mouse on an input.
   input.addEventListener("mousedown",(e) => {
