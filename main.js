@@ -320,8 +320,8 @@ for (let i = 0; i < inputs.length; i++){
       tar.value = "0";
     } else {
       tar.value = calculateByFormula(tar.value);
+      eval(input.getAttribute("oninput").replaceAll(/this/g,`document.getElementsByTagName('input')[${i}]`));
     }
-
   });
 
   // Checks to see if the user clicks their mouse on an input.
