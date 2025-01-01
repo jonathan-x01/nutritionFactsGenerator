@@ -1,0 +1,7 @@
+class NutritionFactsDataManager {
+  data = [];
+  
+  constructor(){
+    
+  }
+}
